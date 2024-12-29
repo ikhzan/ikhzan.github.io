@@ -55,7 +55,13 @@ body{
 .container .content{
     height: 100vh;
     width: 90%;
-    padding: 1rem;
+}
+
+section{
+    box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+    padding: .3rem;
+    margin: .4rem;
+    border-radius: 5px;
 }
 
 .categories{
