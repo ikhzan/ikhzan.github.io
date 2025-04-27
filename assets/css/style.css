@@ -16,6 +16,7 @@ body{
     color: white;
     text-decoration: none;
     transition: all ease;
+    text-transform: uppercase;
 }
 
 .navbar a:hover{
