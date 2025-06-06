@@ -39,12 +39,6 @@ I'm dedicated to building impactful applications by focusing on functionality, p
 - Till to still working as software developer android, integrated with MVVM architecture
 - still working on Mobile and web development using Flutter
 
-
-## 📬 Get in Touch
-
-- Connect with me on [Twitter](https://twitter.com/introvertedbot)
-- Read more of my articles on [theenthusiast.dev](https://theenthusiast.dev)
-
 Thanks for stopping by! Let's connect and explore the fascinating world of technology together. 🚀
 
 
