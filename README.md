@@ -1,8 +1,8 @@
-# Hi, I'm Mohammad Ikhsan! 👋
+# Hi, I'm ikhzan! 👋
 
 I'm a versatile developer with expertise in Flutter, Android, and mobile app development, along with REST API backend integration. My passion lies in creating high-performance applications with seamless navigation, authentication systems, and efficient backend solutions.
 
-![<ikhzan>'s Stats](https://github-readme-stats.vercel.app/api?ikhzan=<ikhzan>&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)
+![ikhzan's Stats](https://github-readme-stats.vercel.app/api?ikhzan=ikhzan&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)
 
 
 ## 💡 What I'm Working On:
