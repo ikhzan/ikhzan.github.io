@@ -8,12 +8,28 @@ contact: active
 description: Contact information.
 ---
 <div class="contact">
-
+	<header>
+        <h2>Contact Me</h2>
+    </header>
+ 	<section>
+        <form action="https://formspree.io/f/manjqkeq" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 	<p>You can get in touch with or find me at:</p>
 	
 	<ul class="list-unstyled">
-	<li><a href="http://github.com/ikhzan">@GitHub</a></li>
-	<li>Or by sending an e-mail to ikhzan.developer@gmail.com</li>
+		<li><a href="http://github.com/ikhzan">@GitHub</a></li>
+		<li>Or by sending an e-mail to ikhzan.developer@gmail.com</li>
 	</ul>
 
 </div>
