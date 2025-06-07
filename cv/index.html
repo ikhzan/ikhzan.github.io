@@ -59,7 +59,12 @@ description: Current CV for Mohammad Ikhsan.
 
     <h2>Skills</h2>
    <div class="chart-container">
-        <canvas id="skillsChart"></canvas>
+        <section>
+            <canvas id="skillsChart"></canvas>
+        </section>
+        <section>
+            <canvas id="platformsChart"></canvas>
+        </section>
     </div>
     
     <script>
@@ -67,10 +72,10 @@ description: Current CV for Mohammad Ikhsan.
         const skillsChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Flutter', 'Android', 'Django', 'REST API', 'Security', 'Java', 'Kotlin'],
+                labels: ['Java', 'Kotlin', 'Python', 'Ruby', 'Javascript', 'Typescript', 'C++'],
                 datasets: [{
                     label: 'Skill Proficiency (Scale of 1-10)',
-                    data: [9, 8, 7, 9, 10, 8, 8],
+                    data: [9, 8, 7, 9, 8, 8, 7],
                     backgroundColor: ['#3498db', '#2ecc71', '#e67e22', '#e74c3c', '#9b59b6', '#f39c12', '#16a085'],
                     borderColor: '#ddd',
                     borderWidth: 1
@@ -90,6 +95,31 @@ description: Current CV for Mohammad Ikhsan.
             }
         });
     </script>
+
+    
+    <script>
+        const platformsCtx = document.getElementById('platformsChart').getContext('2d');
+        new Chart(platformsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Android', 'Restfull Api', 'Web', 'OS', 'MySQL', 'NOSQL', 'Docker'],
+                datasets: [{
+                    label: 'Experience Level (1-10)',
+                    data: [8, 7, 7, 9, 8, 8, 7],
+                    backgroundColor: ['#ff5733', '#33ff57', '#5733ff', '#ff33a8', '#33a8ff', '#ff8c33', '#33ffa8']
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { beginAtZero: true, max: 10 }
+                }
+            }
+        });
+    </script>
+
 
 <div id="chart_div" style="width: 500px; height: 300px;"></div>
 </div>
