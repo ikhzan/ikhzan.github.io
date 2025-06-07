@@ -58,24 +58,38 @@ description: Current CV for Mohammad Ikhsan.
     </dl>
 
     <h2>Skills</h2>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-    google.charts.load('current', {packages: ['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
+   <div class="chart-container">
+        <canvas id="skillsChart"></canvas>
+    </div>
+    
+    <script>
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Flutter', 'Android', 'Django', 'REST API', 'Security', 'Java', 'Kotlin'],
+                datasets: [{
+                    label: 'Skill Proficiency (Scale of 1-10)',
+                    data: [9, 8, 7, 9, 10, 8, 8],
+                    backgroundColor: ['#3498db', '#2ecc71', '#e67e22', '#e74c3c', '#9b59b6', '#f39c12', '#16a085'],
+                    borderColor: '#ddd',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Makes the bars horizontal
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: true }
+                },
+                scales: {
+                    x: { beginAtZero: true, max: 10 }
+                }
+            }
+        });
+    </script>
 
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Technology', 'Usage %'],
-            ['Flutter', 35],
-            ['Android', 30],
-            ['Django', 20],
-            ['REST API', 15]
-        ]);
-
-        var options = { title: 'Development Tech Usage', pieHole: 0.4 };
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    }
-</script>
 <div id="chart_div" style="width: 500px; height: 300px;"></div>
 </div>
