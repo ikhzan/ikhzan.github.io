@@ -58,20 +58,24 @@ description: Current CV for Mohammad Ikhsan.
     </dl>
 
     <h2>Skills</h2>
-    <canvas id="myChart"></canvas>
-    <script>
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Flutter', 'Android', 'Django', 'REST API', 'Security'],
-                datasets: [{
-                    label: 'Skill Proficiency',
-                    data: [9, 8, 7, 9, 10], // Example skill levels
-                    backgroundColor: ['blue', 'green', 'orange', 'red', 'purple']
-                }]
-            }
-        });
-    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
 
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Technology', 'Usage %'],
+            ['Flutter', 35],
+            ['Android', 30],
+            ['Django', 20],
+            ['REST API', 15]
+        ]);
+
+        var options = { title: 'Development Tech Usage', pieHole: 0.4 };
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+<div id="chart_div" style="width: 500px; height: 300px;"></div>
 </div>
