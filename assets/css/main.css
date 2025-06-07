@@ -94,6 +94,7 @@ pre.prettyprint { padding: 10px !important; margin: 40px; font-size: 12px;}
 }
 
 .chart-container {
-	width: 70%;
+	width: 90%;
+	height: auto;
 	margin: auto;
 }
