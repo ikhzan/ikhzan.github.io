@@ -56,4 +56,22 @@ description: Current CV for Mohammad Ikhsan.
         <dt>OS/Environments</dt>
         <dd>Mac, Linux, Unix, Ubuntu, Windows</dd>
     </dl>
+
+    <h2>Skills</h2>
+    <canvas id="myChart"></canvas>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Flutter', 'Android', 'Django', 'REST API', 'Security'],
+                datasets: [{
+                    label: 'Skill Proficiency',
+                    data: [9, 8, 7, 9, 10], // Example skill levels
+                    backgroundColor: ['blue', 'green', 'orange', 'red', 'purple']
+                }]
+            }
+        });
+    </script>
+
 </div>
