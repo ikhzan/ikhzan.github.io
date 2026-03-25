@@ -271,7 +271,7 @@ pre.prettyprint {
 }
 
 .images .item {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto 60px;
 }
 
@@ -289,18 +289,19 @@ pre.prettyprint {
 
 .images .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .images .gallery img {
-  width: 50%;
-  height: 200px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  display: block;
 }
 
 .images .gallery img:hover {
@@ -308,6 +309,7 @@ pre.prettyprint {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
+/* Tablet: 1 column */
 @media (max-width: 768px) {
   .images {
     padding: 30px 16px;
@@ -319,15 +321,16 @@ pre.prettyprint {
   }
 
   .images .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .images .gallery img {
-    height: 240px;
+    aspect-ratio: 16 / 9;
   }
 }
 
+/* Mobile: Full width */
 @media (max-width: 480px) {
   .images {
     padding: 20px 12px;
@@ -335,14 +338,15 @@ pre.prettyprint {
 
   .images h3 {
     font-size: 18px;
+    margin-bottom: 12px;
   }
 
   .images .gallery {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 12px;
   }
 
   .images .gallery img {
-    height: 200px;
+    aspect-ratio: 16 / 9;
   }
 }
