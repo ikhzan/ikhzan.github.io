@@ -1,68 +1,1016 @@
----
-layout: default
-title: Mohammad Ikhsan
-cv: passive
-notes: passive
-contact: passive
-description: Mohammad Ikhsan is a software developer, android app pentester, researcher, a PhD student
----
-<!-- <div class="jumbotron"> -->
-<div class="home">
-	<div class="col-sm-4">
-		<!-- <img class="img-circle avatar" width="150" height="150" alt="Mohammad Ikhsan" src="/assets/img/mustache.webp"> -->
-		<img class="img-circle avatar" alt="Mohammad Ikhsan" src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=i4c0zwYAAAAJ&citpid=1">
-	</div>
-	<div itemscope itemtype="http://data-vocabulary.org/Person" class="col-sm-8">
-		<p class="lead">Hi, I'm <span itemprop="name">Mohammad Ikhsan</span> and I create android app, integrate with restful API, fix bugs, android app reverse engineer expert, can inject code and read binary code android.</p>
-		<p>I get by as a <span itemprop="title"> research engineer</span>, <span itemprop="title">software developer</span>, <span itemprop="title">PhD student</span>, <span itemprop="title">IoT Tech researcher</span>, <span itemprop="title">accessibility specialist</span>, and movies lover living in <span itemprop="address" itemscope
-		itemtype="http://data-vocabulary.org/Address">Istanbul <span itemprop="region">Turkiye</span></span> and student at <a href="http://www.izu.edu.tr">Zaim University</a> at <span itemprop="affiliation">.</p>
-		<p>I'm also available for hire as a <span itemprop="title">freelance developer, researcher, or consultant</span>. <a href="contact">Drop me a line</a> about your project if you're interested in working with me.</p>
-	</div>
-	<div class="headlines">
-		<h3>What I am up to ?</h3>
-		<p>I am hoping to find new and better oportunity, jobs and better salary. I have experience in software development but I am sure that is not enough, still keep looking job and upgrading skills, add more skills</p>
-		<ul>
-			<li>Upgrading skills, learning flutter, since I am single fighter in my current role</li>
-			<li>Spring boot project for my IoT research web restful API, I love java but condition not supported to code with only java</li>
-			<li>Ruby on rails give me easy time when developing MVC based app</li>
-			<li>Looking new role >> jobs, better salary</li>
-			<li>Dockerize all back-end project that I have now, since the bos keep asking to move server so frequently</li>
-			<li>Building sensor and SHM system at <a href="https://shmapp.online">https://shmapp.online</a> , I develop system that sensor send the data and present it the website in realtime</li>
-		</ul>
-	</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEV.FOX — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050810;
+    --bg2: #080d1a;
+    --panel: #0b1225;
+    --border: #1a2a4a;
+    --neon: #00d4ff;
+    --neon2: #ff3cac;
+    --neon3: #7b2fff;
+    --gold: #ffd700;
+    --green: #00ff88;
+    --text: #c8d8f0;
+    --dim: #5a7090;
+    --glow: 0 0 20px rgba(0,212,255,0.4);
+    --glow2: 0 0 20px rgba(255,60,172,0.4);
+  }
 
-	<div class="current-projects">
-		<h3>Multiplatform AI Projects</h3>
-		<ul>
-			<li><b>CTF-Mentor AI Project:</b> 
-				<span>This project is developed to help cyber security student to learn from ai to understand about basic things about cyber security and Capture The Flag (CTF) game. you can access here <a href="https://book-chat.online" target="_blank">https://book-chat.online</a>  </span>
-			</li>
-			<li><b>Sales Chatbot:</b> <span>Suppose to assist customer to select best products for them based flavors, you can access here <a href="https://company-chat.biz">https://company-chat.biz</a></span></li>
-		</ul>
-	</div>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-	<section class="images">
-		<article class="item">
-			<h3>CTF Mentor AI</h3>
-			<div class="gallery">
-			<img src="/assets/img/ctf1.png" alt="CTF Mentor AI interface - main dashboard">
-			<img src="/assets/img/ctf2.png" alt="CTF Mentor AI interface - problem solving">
-			<img src="/assets/img/ctf3.png" alt="CTF Mentor AI interface - hints and guidance">
-			<img src="/assets/img/ctf4.png" alt="CTF Mentor AI interface - progress tracking">
-			</div>
-		</article>
+  html { scroll-behavior: smooth; }
 
-		<article class="item">
-			<h3>Sales Chatbot</h3>
-			<div class="gallery">
-			<img src="/assets/img/sales1.png" alt="Sales Chatbot interface - conversation view">
-			<img src="/assets/img/sales2.png" alt="Sales Chatbot interface - product recommendations">
-			<img src="/assets/img/sales3.png" alt="Sales Chatbot interface - customer support">
-			<img src="/assets/img/sales4.png" alt="Sales Chatbot interface - analytics dashboard">
-			</div>
-		</article>
-	</section>
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
 
+  /* ── SCANLINE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px);
+    pointer-events: none;
+    z-index: 9999;
+  }
 
+  /* ── GRID BACKGROUND ── */
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── LOADING SCREEN ── */
+  #loader {
+    position: fixed; inset: 0;
+    background: var(--bg);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    z-index: 10000;
+    transition: opacity 0.8s ease;
+  }
+  #loader.out { opacity: 0; pointer-events: none; }
+
+  .loader-text {
+    font-family: 'Orbitron', monospace;
+    font-size: 12px;
+    color: var(--neon);
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+    animation: blink 1s step-end infinite;
+  }
+  .loader-bar-wrap {
+    width: 300px; height: 4px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+  }
+  .loader-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon3), var(--neon));
+    width: 0;
+    animation: loadfill 1.8s ease forwards;
+  }
+  .loader-pct {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--dim);
+    margin-top: 8px;
+    letter-spacing: 2px;
+  }
+
+  @keyframes loadfill { to { width: 100%; } }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    height: 56px;
+    background: rgba(5,8,16,0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 32px;
+    z-index: 1000;
+  }
+
+  .nav-logo {
+    font-family: 'Orbitron', monospace;
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--neon);
+    text-shadow: var(--glow);
+    letter-spacing: 3px;
+  }
+  .nav-logo span { color: var(--neon2); }
+
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--dim);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -4px; left: 0; right: 0;
+    height: 1px;
+    background: var(--neon);
+    transform: scaleX(0);
+    transition: transform 0.2s;
+  }
+  .nav-links a:hover { color: var(--neon); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-xp {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 1px;
+  }
+
+  /* ── MAIN WRAPPER ── */
+  main {
+    position: relative; z-index: 1;
+    padding-top: 56px;
+  }
+
+  /* ── HERO SECTION ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 0 10vw;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+  .orb1 { width: 600px; height: 600px; background: rgba(0,212,255,0.06); right: -100px; top: -100px; }
+  .orb2 { width: 400px; height: 400px; background: rgba(255,60,172,0.06); left: 200px; bottom: 0; }
+  .orb3 { width: 300px; height: 300px; background: rgba(123,47,255,0.08); right: 30%; top: 30%; }
+
+  .hero-content { max-width: 700px; }
+
+  .hero-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--neon);
+    letter-spacing: 4px;
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-tag::before {
+    content: '▶';
+    animation: pulse 1.5s ease infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  .hero-name {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 900;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 0 40px rgba(0,212,255,0.3);
+    margin-bottom: 8px;
+  }
+  .hero-name .accent { color: var(--neon); }
+
+  .hero-title {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 400;
+    color: var(--neon2);
+    letter-spacing: 6px;
+    margin-bottom: 24px;
+    text-shadow: var(--glow2);
+  }
+
+  .hero-bio {
+    font-size: 17px;
+    color: var(--dim);
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  /* STAT BARS */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 480px;
+    margin-bottom: 40px;
+  }
+
+  .stat-row { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--dim);
+    display: flex; justify-content: space-between;
+  }
+  .stat-label span { color: var(--gold); }
+
+  .stat-bar {
+    height: 6px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    position: relative;
+  }
+  .stat-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon3), var(--neon));
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+  }
+  .stat-fill::after {
+    content: '';
+    position: absolute; right: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: white;
+    filter: blur(2px);
+  }
+
+  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .btn {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: currentColor;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .btn:hover::before { opacity: 0.08; }
+
+  .btn-primary {
+    background: transparent;
+    border: 1px solid var(--neon);
+    color: var(--neon);
+    box-shadow: var(--glow), inset 0 0 20px rgba(0,212,255,0.05);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 40px rgba(0,212,255,0.6), inset 0 0 20px rgba(0,212,255,0.1);
+  }
+  .btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--dim);
+  }
+  .btn-secondary:hover { border-color: var(--neon2); color: var(--neon2); }
+
+  /* ── SECTION COMMON ── */
+  section {
+    padding: 100px 10vw;
+    position: relative;
+  }
+
+  .section-header {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 60px;
+  }
+  .section-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--neon2);
+    letter-spacing: 2px;
+  }
+  .section-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 22px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border), transparent);
+  }
+
+  /* ── SKILLS SECTION ── */
+  #skills { background: var(--bg2); }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+
+  .skill-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 20px;
+    position: relative;
+    cursor: default;
+    transition: border-color 0.2s, transform 0.2s;
+    overflow: hidden;
+  }
+  .skill-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--neon3), var(--neon));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .skill-card:hover { border-color: var(--neon); transform: translateY(-2px); }
+  .skill-card:hover::before { transform: scaleX(1); }
+
+  .skill-card-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    margin-bottom: 14px;
+  }
+  .skill-icon { font-size: 24px; }
+  .skill-level-badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    padding: 3px 8px;
+    border: 1px solid;
+    letter-spacing: 1px;
+  }
+  .lvl-master { border-color: var(--gold); color: var(--gold); }
+  .lvl-expert { border-color: var(--neon); color: var(--neon); }
+  .lvl-adept  { border-color: var(--neon2); color: var(--neon2); }
+  .lvl-apprentice { border-color: var(--neon3); color: var(--neon3); }
+
+  .skill-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+  }
+  .skill-sub {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--dim);
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+
+  .xp-bar-wrap {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .xp-bar {
+    flex: 1; height: 4px;
+    background: rgba(255,255,255,0.05);
+    overflow: hidden;
+  }
+  .xp-fill {
+    height: 100%;
+    background: var(--neon);
+    width: 0;
+    transition: width 1.8s cubic-bezier(0.4,0,0.2,1);
+  }
+  .xp-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--dim);
+    white-space: nowrap;
+  }
+
+  /* ── PROJECTS SECTION ── */
+  .quests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+  }
+
+  .quest-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: pointer;
+  }
+  .quest-card:hover { border-color: var(--neon); transform: translateY(-4px); }
+
+  .quest-card-thumb {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .quest-thumb-bg {
+    position: absolute; inset: 0;
+    opacity: 0.15;
+    background-size: cover; background-position: center;
+  }
+  .quest-thumb-icon {
+    font-size: 56px;
+    position: relative; z-index: 1;
+    filter: drop-shadow(0 0 20px rgba(0,212,255,0.5));
+  }
+  .quest-difficulty {
+    position: absolute; top: 12px; right: 12px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 4px 10px;
+    border: 1px solid;
+    z-index: 2;
+  }
+  .diff-legendary { border-color: var(--gold); color: var(--gold); background: rgba(255,215,0,0.05); }
+  .diff-epic { border-color: var(--neon2); color: var(--neon2); background: rgba(255,60,172,0.05); }
+  .diff-rare { border-color: var(--neon3); color: var(--neon3); background: rgba(123,47,255,0.05); }
+  .diff-common { border-color: var(--neon); color: var(--neon); background: rgba(0,212,255,0.05); }
+
+  .quest-card-body { padding: 20px; }
+
+  .quest-status {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--green);
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .quest-status::before {
+    content: '';
+    width: 5px; height: 5px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--green);
+    animation: blink 1.5s ease infinite;
+  }
+
+  .quest-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .quest-desc {
+    font-size: 14px;
+    color: var(--dim);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+
+  .quest-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .quest-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    padding: 3px 8px;
+    background: rgba(0,212,255,0.06);
+    border: 1px solid rgba(0,212,255,0.15);
+    color: var(--neon);
+    letter-spacing: 1px;
+  }
+
+  .quest-xp-reward {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .quest-xp-reward::before { content: '★'; }
+
+  .quest-links {
+    display: flex; gap: 8px;
+    margin-top: 14px;
+  }
+  .quest-link {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    color: var(--dim);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+  }
+  .quest-link:hover { border-color: var(--neon); color: var(--neon); }
+
+  /* ── ACHIEVEMENTS ── */
+  #achievements { background: var(--bg2); }
+
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .badge {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 24px 16px;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .badge.unlocked:hover { border-color: var(--gold); transform: scale(1.03); }
+  .badge.locked { opacity: 0.35; filter: grayscale(1); }
+  .badge.unlocked::after {
+    content: 'UNLOCKED';
+    position: absolute; top: 8px; right: 8px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 7px;
+    color: var(--gold);
+    letter-spacing: 1px;
+  }
+
+  .badge-icon { font-size: 40px; margin-bottom: 12px; display: block; }
+  .badge-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .badge-desc {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--dim);
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    text-align: center;
+    position: relative;
+  }
+
+  .contact-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-tagline {
+    font-size: 17px;
+    color: var(--dim);
+    margin-bottom: 40px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .contact-links {
+    display: flex; gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+
+  .contact-link {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 14px 24px;
+    border: 1px solid var(--border);
+    color: var(--dim);
+    text-decoration: none;
+    transition: all 0.2s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .contact-link:hover { border-color: var(--neon); color: var(--neon); box-shadow: var(--glow); }
+
+  .footer-note {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--dim);
+    letter-spacing: 2px;
+    opacity: 0.5;
+  }
+
+  /* ── LEVEL UP TOAST ── */
+  #level-toast {
+    position: fixed; bottom: 32px; right: 32px;
+    background: var(--panel);
+    border: 1px solid var(--gold);
+    padding: 16px 24px;
+    z-index: 9000;
+    transform: translateX(200%);
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: 0 0 30px rgba(255,215,0,0.2);
+    display: flex; align-items: center; gap: 12px;
+  }
+  #level-toast.show { transform: translateX(0); }
+  .toast-icon { font-size: 28px; }
+  .toast-text { font-family: 'Orbitron', monospace; font-size: 11px; color: var(--gold); letter-spacing: 1px; line-height: 1.6; }
+
+  /* ── SCROLL BAR ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--neon3); }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    section { padding: 60px 6vw; }
+    nav { padding: 0 16px; }
+    .nav-links { gap: 16px; }
+    .stat-grid { grid-template-columns: 1fr; }
+    .hero-name { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-text">INITIALIZING PORTFOLIO v3.0</div>
+  <div class="loader-bar-wrap"><div class="loader-bar-fill"></div></div>
+  <div class="loader-pct" id="loader-pct">0%</div>
 </div>
-<!-- </div> -->
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">DEV<span>.</span>FOX</div>
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#projects">Quests</a>
+    <a href="#achievements">Badges</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-xp">⚡ LVL 42 · 12,800 XP</div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+    <div class="hero-orb orb3"></div>
+    <div class="hero-content">
+      <div class="hero-tag">PLAYER ONE READY</div>
+      <h1 class="hero-name">MOHAMMAD<br><span class="accent">IKHSAN</span></h1>
+      <div class="hero-title">FULL STACK DEVELOPER</div>
+      <p class="hero-bio">
+        A seasoned code warrior with 6+ years navigating the digital frontier. 
+        Specializing in building scalable web applications, android app, and 
+        crafting experiences that players actually enjoy.
+      </p>
+
+      <div class="stat-grid">
+        <div class="stat-row">
+          <div class="stat-label">INTELLIGENCE <span>95</span></div>
+          <div class="stat-bar"><div class="stat-fill" data-w="95%"></div></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">CREATIVITY <span>88</span></div>
+          <div class="stat-bar"><div class="stat-fill" data-w="88%"></div></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">SPEED <span>82</span></div>
+          <div class="stat-bar"><div class="stat-fill" data-w="82%"></div></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label">TEAMWORK <span>91</span></div>
+          <div class="stat-bar"><div class="stat-fill" data-w="91%"></div></div>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">▶ VIEW QUESTS</a>
+        <a href="#contact" class="btn btn-secondary">⚡ HIRE ME</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header fade-in">
+      <div class="section-num">01</div>
+      <div class="section-title">Skill Tree</div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card fade-in">
+        <div class="skill-card-header">
+          <div class="skill-icon">⚛️</div>
+          <div class="skill-level-badge lvl-master">MASTER</div>
+        </div>
+        <div class="skill-name">ANGULAR / NEXT.JS</div>
+        <div class="skill-sub">FRONTEND FRAMEWORK</div>
+        <div class="xp-bar-wrap">
+          <div class="xp-bar"><div class="xp-fill" data-w="95%" style="background: var(--gold);"></div></div>
+          <div class="xp-label">9,500 / 10,000 XP</div>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-card-header">
+          <div class="skill-icon">🟨</div>
+          <div class="skill-level-badge lvl-master">MASTER</div>
+        </div>
+        <div class="skill-name">JAVASCRIPT / TS</div>
+        <div class="skill-sub">CORE LANGUAGE</div>
+        <div class="xp-bar-wrap">
+          <div class="xp-bar"><div class="xp-fill" data-w="92%" style="background: var(--gold);"></div></div>
+          <div class="xp-label">9,200 / 10,000 XP</div>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-card-header">
+          <div class="skill-icon">🐍</div>
+          <div class="skill-level-badge lvl-expert">EXPERT</div>
+        </div>
+        <div class="skill-name">PYTHON</div>
+        <div class="skill-sub">BACKEND / AI/ML</div>
+        <div class="xp-bar-wrap">
+          <div class="xp-bar"><div class="xp-fill" data-w="78%"></div></div>
+          <div class="xp-label">7,800 / 10,000 XP</div>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-card-header">
+          <div class="skill-icon">🗄️</div>
+          <div class="skill-level-badge lvl-expert">EXPERT</div>
+        </div>
+        <div class="skill-name">NODE.JS / APIs</div>
+        <div class="skill-sub">SERVER SIDE</div>
+        <div class="xp-bar-wrap">
+          <div class="xp-bar"><div class="xp-fill" data-w="80%"></div></div>
+          <div class="xp-label">8,000 / 10,000 XP</div>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-card-header">
+          <div class="skill-icon">🎨</div>
+          <div class="skill-level-badge lvl-expert">EXPERT</div>
+        </div>
+        <div class="skill-name">JAVA / SPRINGBOOT</div>
+        <div class="skill-sub">BACKEND FRAMEWORK</div>
+        <div class="xp-bar-wrap">
+          <div class="xp-bar"><div class="xp-fill" data-w="85%" style="background: var(--neon2);"></div></div>
+          <div class="xp-label">8,500 / 10,000 XP</div>
+        </div>
+      </div>
+
+      <div class="skill-card fade-in">
+        <div class="skill-card-header">
+          <div class="skill-icon">☁️</div>
+          <div class="skill-level-badge lvl-adept">ADEPT</div>
+        </div>
+        <div class="skill-name">DEVOPS</div>
+        <div class="skill-sub">CLOUD INFRASTRUCTURE</div>
+        <div class="xp-bar-wrap">
+          <div class="xp-bar"><div class="xp-fill" data-w="65%" style="background: var(--neon2);"></div></div>
+          <div class="xp-label">6,500 / 10,000 XP</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header fade-in">
+      <div class="section-num">02</div>
+      <div class="section-title">Quest Log</div>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="quests-grid">
+
+      <div class="quest-card fade-in">
+        <div class="quest-card-thumb" style="background: linear-gradient(135deg, #0a0a2e, #1a0040);">
+          <div class="quest-thumb-icon">🌌</div>
+          <span class="quest-difficulty diff-legendary">LEGENDARY</span>
+        </div>
+        <div class="quest-card-body">
+          <div class="quest-status">COMPLETED</div>
+          <div class="quest-title">SHM APP</div>
+          <p class="quest-desc">Real time IOT Data Monitoring, developed Arduino board and LoraWAN IOT Gateway.</p>
+          <div class="quest-tags">
+            <span class="quest-tag">ANGULAR</span>
+            <span class="quest-tag">DJANGO</span>
+            <span class="quest-tag">WEBSOCKETS</span>
+            <span class="quest-tag">MYSQL</span>
+          </div>
+          <div class="quest-xp-reward">+2,500 XP EARNED</div>
+          <div class="quest-links">
+            <a href="https://shmapp.online" class="quest-link">⬡ LIVE DEMO</a>
+            <a href="#" class="quest-link">◈ CLOSED PROJECT</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="quest-card fade-in">
+        <div class="quest-card-thumb" style="background: linear-gradient(135deg, #1a0020, #2d0030);">
+          <div class="quest-thumb-icon">🤖</div>
+          <span class="quest-difficulty diff-common">COMMON</span>
+        </div>
+        <div class="quest-card-body">
+          <div class="quest-status">COMPLETED</div>
+          <div class="quest-title">CTF MENTOR AI</div>
+          <p class="quest-desc">AI powered Capture The Flag (CTF) game and cyber security learning platform</p>
+          <div class="quest-tags">
+            <span class="quest-tag">PYTHON</span>
+            <span class="quest-tag">FASTAPI</span>
+            <span class="quest-tag">ANGULAR</span>
+            <span class="quest-tag">OLLAMA</span>
+          </div>
+          <div class="quest-xp-reward">+1,800 XP EARNED</div>
+          <div class="quest-links">
+            <a href="https://book-chat.online" class="quest-link">⬡ LIVE DEMO</a>
+            <a href="#" class="quest-link">◈ SOURCE</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="quest-card fade-in">
+        <div class="quest-card-thumb" style="background: linear-gradient(135deg, #001a1a, #002040);">
+          <div class="quest-thumb-icon">🔐</div>
+          <span class="quest-difficulty diff-common">COMMON</span>
+        </div>
+        <div class="quest-card-body">
+          <div class="quest-status">ON-PROGRESS</div>
+          <div class="quest-title">SALES BOT</div>
+          <p class="quest-desc">AI based chat ai bot assistance to help customer choose suitable products</p>
+          <div class="quest-tags">
+            <span class="quest-tag">ANGULAR</span>
+            <span class="quest-tag">FASTAPI</span>
+            <span class="quest-tag">OLLAMA</span>
+          </div>
+          <div class="quest-xp-reward">+1,600 XP EARNED</div>
+          <div class="quest-links">
+            <a href="https://company-chat.biz" class="quest-link">⬡ LIVE DEMO</a>
+            <a href="#" class="quest-link">◈ SOURCE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <div class="section-header fade-in">
+      <div class="section-num">03</div>
+      <div class="section-title">Achievements</div>
+      <div class="section-line">Complete and Continues Projects</div>
+    </div>
+
+    <div class="achievements-grid">
+      <div class="badge unlocked fade-in">
+        <span class="badge-icon">🏆</span>
+        <div class="badge-name">OPEN SOURCE HERO</div>
+        <div class="badge-desc">500+ GitHub stars across projects</div>
+      </div>
+      <div class="badge unlocked fade-in">
+        <span class="badge-icon">⚡</span>
+        <div class="badge-name">SPEED CODER</div>
+        <div class="badge-desc">Shipped MVP in under 48 hours</div>
+      </div>
+      <div class="badge unlocked fade-in">
+        <span class="badge-icon">🔥</span>
+        <div class="badge-name">365 STREAK</div>
+        <div class="badge-desc">Committed code every day for a year</div>
+      </div>
+      <div class="badge unlocked fade-in">
+        <span class="badge-icon">🤝</span>
+        <div class="badge-name">TEAM PLAYER</div>
+        <div class="badge-desc">Led cross-functional team of 8</div>
+      </div>
+      
+      <div class="badge locked fade-in">
+        <span class="badge-icon">🧠</span>
+        <div class="badge-name">AI WHISPERER</div>
+        <div class="badge-desc">Trained a production ML model</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header fade-in" style="justify-content: center; flex-direction: column; text-align: center; gap: 8px; margin-bottom: 32px;">
+      <div class="section-num" style="text-align: center;">04</div>
+      <div class="section-title">Start a Quest</div>
+    </div>
+    <div class="contact-inner fade-in">
+      <p class="contact-tagline">
+        Looking for a developer to join your party? I'm currently available for new quests — full-time, freelance, or co-op.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:alex@hero.dev" class="contact-link">✉ EMAIL</a>
+        <a href="https://github.com/ikhzan" target="_blank" class="contact-link">◈ GITHUB</a>
+        <a href="https://www.linkedin.com/in/mohammad-ikhsan-59656819a/" target="_blank" class="contact-link">⬡ LINKEDIN</a>
+      </div>
+      <div class="footer-note">DEV.FOX © 2026 · BUILT WITH ♥ AND TOO MUCH CAFFEINE</div>
+    </div>
+  </section>
+
+</main>
+
+<!-- LEVEL UP TOAST -->
+<div id="level-toast">
+  <div class="toast-icon">🎉</div>
+  <div class="toast-text">LEVEL UP!<br>YOU REACHED LVL 43</div>
+</div>
+
+<script>
+  // ── LOADER ──
+  let pct = 0;
+  const pctEl = document.getElementById('loader-pct');
+  const loader = document.getElementById('loader');
+  const iv = setInterval(() => {
+    pct = Math.min(100, pct + Math.floor(Math.random() * 12) + 3);
+    pctEl.textContent = pct + '%';
+    if (pct >= 100) {
+      clearInterval(iv);
+      setTimeout(() => {
+        loader.classList.add('out');
+        setTimeout(() => loader.remove(), 900);
+        animateStats();
+        showLevelToast();
+      }, 400);
+    }
+  }, 80);
+
+  // ── STAT BARS ANIMATION ──
+  function animateStats() {
+    document.querySelectorAll('.stat-fill, .xp-fill').forEach(el => {
+      el.style.width = el.dataset.w || '0%';
+    });
+  }
+
+  // ── INTERSECTION OBSERVER ──
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        // animate xp bars when skill section enters
+        if (e.target.closest('#skills') || e.target.closest('#hero')) {
+          e.target.querySelectorAll('.xp-fill, .stat-fill').forEach(el => {
+            el.style.width = el.dataset.w || '0%';
+          });
+        }
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // ── LEVEL TOAST ──
+  function showLevelToast() {
+    const t = document.getElementById('level-toast');
+    setTimeout(() => {
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3500);
+    }, 1800);
+  }
+</script>
+</body>
+</html>
