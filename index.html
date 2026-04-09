@@ -16,8 +16,8 @@
     --neon3: #7b2fff;
     --gold: #ffd700;
     --green: #00ff88;
-    --text: #e7eef9;
-    --dim: #7c93b7;
+    --text: #c8d8f0;
+    --dim: #5a7090;
     --glow: 0 0 20px rgba(0,212,255,0.4);
     --glow2: 0 0 20px rgba(255,60,172,0.4);
   }
@@ -123,7 +123,7 @@
   .nav-links a {
     font-family: 'Share Tech Mono', monospace;
     font-size: 11px;
-    color: var(--text);
+    color: var(--dim);
     text-decoration: none;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -653,12 +653,168 @@
   }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
 
+  /* ── HAMBURGER BUTTON ── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+    z-index: 1100;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--neon);
+    transition: all 0.3s;
+    transform-origin: center;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ── MOBILE DRAWER ── */
+  .mobile-drawer {
+    display: none;
+    position: fixed; top: 56px; left: 0; right: 0; bottom: 0;
+    background: rgba(5,8,16,0.98);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    border-top: 1px solid var(--border);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .mobile-drawer.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+  .mobile-drawer a {
+    font-family: 'Orbitron', monospace;
+    font-size: 20px;
+    color: var(--dim);
+    text-decoration: none;
+    letter-spacing: 6px;
+    font-weight: 700;
+    transition: color 0.2s;
+    padding: 8px 0;
+  }
+  .mobile-drawer a:hover,
+  .mobile-drawer a:active { color: var(--neon); }
+  .mobile-drawer .drawer-xp {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-top: 20px;
+  }
+
+  /* ── MOBILE BOTTOM XP BAR ── */
+  .mobile-xp-bar {
+    display: none;
+    position: fixed; bottom: 0; left: 0; right: 0;
+    height: 48px;
+    background: rgba(8,13,26,0.97);
+    border-top: 1px solid var(--border);
+    z-index: 900;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 16px;
+  }
+  .mobile-xp-bar a {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 9px;
+    color: var(--dim);
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+    padding: 6px 10px;
+    transition: color 0.2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .mobile-xp-bar a span { font-size: 16px; }
+  .mobile-xp-bar a:active { color: var(--neon); }
+
+  /* ── TABLET (≤ 900px) ── */
+  @media (max-width: 900px) {
+    .quests-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── MOBILE (≤ 768px) ── */
   @media (max-width: 768px) {
-    section { padding: 60px 6vw; }
-    nav { padding: 0 16px; }
-    .nav-links { gap: 16px; }
+    /* NAV */
+    nav { padding: 0 16px; height: 52px; }
+    .nav-links { display: none; }
+    .nav-xp { display: none; }
+    .nav-hamburger { display: flex; }
+    .mobile-drawer { display: flex; }
+    .mobile-xp-bar { display: flex; }
+    main { padding-top: 52px; padding-bottom: 48px; }
+
+    /* SECTIONS */
+    section { padding: 56px 5vw 48px; }
+    .section-header { margin-bottom: 32px; gap: 10px; }
+    .section-title { font-size: 16px; letter-spacing: 2px; }
+
+    /* HERO */
+    #hero {
+      padding: 32px 5vw 60px;
+      min-height: calc(100vh - 52px);
+      align-items: flex-start;
+      padding-top: 48px;
+    }
+    .hero-tag { font-size: 10px; letter-spacing: 2px; margin-bottom: 12px; }
+    .hero-name { font-size: clamp(40px, 12vw, 60px); margin-bottom: 10px; }
+    .hero-title { font-size: clamp(11px, 3vw, 16px); letter-spacing: 3px; margin-bottom: 16px; }
+    .hero-bio { font-size: 15px; margin-bottom: 28px; }
+    .stat-grid { grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 28px; }
+    .stat-label { font-size: 9px; letter-spacing: 1px; }
+    .hero-cta { gap: 10px; }
+    .btn { font-size: 10px; padding: 12px 20px; letter-spacing: 2px; }
+    .orb1 { width: 300px; height: 300px; }
+    .orb2 { width: 200px; height: 200px; }
+    .orb3 { display: none; }
+
+    /* SKILLS */
+    .skills-grid { grid-template-columns: 1fr; gap: 12px; }
+    .skill-card { padding: 16px; }
+
+    /* PROJECTS */
+    .quests-grid { grid-template-columns: 1fr; gap: 16px; }
+    .quest-card-thumb { height: 140px; }
+    .quest-thumb-icon { font-size: 44px; }
+
+    /* ACHIEVEMENTS */
+    .achievements-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .badge { padding: 16px 10px; }
+    .badge-icon { font-size: 30px; margin-bottom: 8px; }
+    .badge-name { font-size: 9px; }
+    .badge-desc { font-size: 8px; }
+
+    /* CONTACT */
+    #contact { padding-bottom: 80px; }
+    .contact-tagline { font-size: 15px; }
+    .contact-links { gap: 10px; }
+    .contact-link { padding: 12px 16px; font-size: 10px; width: 100%; justify-content: center; }
+
+    /* TOAST */
+    #level-toast { bottom: 60px; right: 12px; left: 12px; font-size: 10px; }
+  }
+
+  /* ── SMALL MOBILE (≤ 400px) ── */
+  @media (max-width: 400px) {
     .stat-grid { grid-template-columns: 1fr; }
     .hero-name { font-size: 36px; }
+    .achievements-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -681,7 +837,28 @@
     <a href="#contact">Contact</a>
   </div>
   <div class="nav-xp">⚡ LVL 42 · 12,800 XP</div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="#skills" class="drawer-link">SKILLS</a>
+  <a href="#projects" class="drawer-link">QUESTS</a>
+  <a href="#achievements" class="drawer-link">BADGES</a>
+  <a href="#contact" class="drawer-link">CONTACT</a>
+  <div class="drawer-xp">⚡ LVL 42 · 12,800 XP</div>
+</div>
+
+<!-- MOBILE BOTTOM NAV -->
+<div class="mobile-xp-bar">
+  <a href="#hero"><span>🏠</span>HOME</a>
+  <a href="#skills"><span>⚔️</span>SKILLS</a>
+  <a href="#projects"><span>📜</span>QUESTS</a>
+  <a href="#achievements"><span>🏆</span>BADGES</a>
+  <a href="#contact"><span>✉</span>CONTACT</a>
+</div>
 
 <main>
 
@@ -696,7 +873,7 @@
       <div class="hero-title">FULL STACK DEVELOPER</div>
       <p class="hero-bio">
         A seasoned code warrior with 6+ years navigating the digital frontier. 
-        Specializing in building scalable web applications, android app, and 
+        Specializing in building scalable web applications, android, flutter, javafx and 
         crafting experiences that players actually enjoy.
       </p>
 
@@ -740,7 +917,7 @@
           <div class="skill-icon">⚛️</div>
           <div class="skill-level-badge lvl-master">MASTER</div>
         </div>
-        <div class="skill-name">ANGULAR / NEXT.JS</div>
+        <div class="skill-name">DJANGO / PYTHON</div>
         <div class="skill-sub">FRONTEND FRAMEWORK</div>
         <div class="xp-bar-wrap">
           <div class="xp-bar"><div class="xp-fill" data-w="95%" style="background: var(--gold);"></div></div>
@@ -792,8 +969,8 @@
           <div class="skill-icon">🎨</div>
           <div class="skill-level-badge lvl-expert">EXPERT</div>
         </div>
-        <div class="skill-name">JAVA / SPRINGBOOT</div>
-        <div class="skill-sub">BACKEND FRAMEWORK</div>
+        <div class="skill-name">SPRING-BOOT / JAVA</div>
+        <div class="skill-sub">SERVER SIDE</div>
         <div class="xp-bar-wrap">
           <div class="xp-bar"><div class="xp-fill" data-w="85%" style="background: var(--neon2);"></div></div>
           <div class="xp-label">8,500 / 10,000 XP</div>
@@ -805,8 +982,8 @@
           <div class="skill-icon">☁️</div>
           <div class="skill-level-badge lvl-adept">ADEPT</div>
         </div>
-        <div class="skill-name">DEVOPS</div>
-        <div class="skill-sub">CLOUD INFRASTRUCTURE</div>
+        <div class="skill-name">MOBILE APP / ANDROID-IOS</div>
+        <div class="skill-sub">CLIENT SIDE</div>
         <div class="xp-bar-wrap">
           <div class="xp-bar"><div class="xp-fill" data-w="65%" style="background: var(--neon2);"></div></div>
           <div class="xp-label">6,500 / 10,000 XP</div>
@@ -819,7 +996,7 @@
   <section id="projects">
     <div class="section-header fade-in">
       <div class="section-num">02</div>
-      <div class="section-title">Quest Log</div>
+      <div class="section-title">SHM-APP</div>
       <div class="section-line"></div>
     </div>
 
@@ -832,8 +1009,8 @@
         </div>
         <div class="quest-card-body">
           <div class="quest-status">COMPLETED</div>
-          <div class="quest-title">SHM APP</div>
-          <p class="quest-desc">Real time IOT Data Monitoring, developed Arduino board and LoraWAN IOT Gateway.</p>
+          <div class="quest-title">COSMOS DASHBOARD</div>
+          <p class="quest-desc">A real-time analytics platform processing 1M+ events/day with 3D data visualizations and live collaboration features.</p>
           <div class="quest-tags">
             <span class="quest-tag">ANGULAR</span>
             <span class="quest-tag">DJANGO</span>
@@ -843,7 +1020,7 @@
           <div class="quest-xp-reward">+2,500 XP EARNED</div>
           <div class="quest-links">
             <a href="https://shmapp.online" class="quest-link">⬡ LIVE DEMO</a>
-            <a href="#" class="quest-link">◈ CLOSED PROJECT</a>
+            <a href="#" class="quest-link">◈ SOURCE</a>
           </div>
         </div>
       </div>
@@ -851,21 +1028,21 @@
       <div class="quest-card fade-in">
         <div class="quest-card-thumb" style="background: linear-gradient(135deg, #1a0020, #2d0030);">
           <div class="quest-thumb-icon">🤖</div>
-          <span class="quest-difficulty diff-common">COMMON</span>
+          <span class="quest-difficulty diff-epic">EPIC</span>
         </div>
         <div class="quest-card-body">
           <div class="quest-status">COMPLETED</div>
-          <div class="quest-title">CTF MENTOR AI</div>
-          <p class="quest-desc">AI powered Capture The Flag (CTF) game and cyber security learning platform</p>
+          <div class="quest-title">CTF MENTOR</div>
+          <p class="quest-desc">Capture The Flag game AI support, cyber security learning center.</p>
           <div class="quest-tags">
             <span class="quest-tag">PYTHON</span>
+            <span class="quest-tag">OLLAMA</span>
             <span class="quest-tag">FASTAPI</span>
             <span class="quest-tag">ANGULAR</span>
-            <span class="quest-tag">OLLAMA</span>
           </div>
           <div class="quest-xp-reward">+1,800 XP EARNED</div>
           <div class="quest-links">
-            <a href="https://book-chat.online" class="quest-link">⬡ LIVE DEMO</a>
+            <a href="#" class="quest-link">⬡ LIVE DEMO</a>
             <a href="#" class="quest-link">◈ SOURCE</a>
           </div>
         </div>
@@ -874,20 +1051,21 @@
       <div class="quest-card fade-in">
         <div class="quest-card-thumb" style="background: linear-gradient(135deg, #001a1a, #002040);">
           <div class="quest-thumb-icon">🔐</div>
-          <span class="quest-difficulty diff-common">COMMON</span>
+          <span class="quest-difficulty diff-epic">EPIC</span>
         </div>
         <div class="quest-card-body">
-          <div class="quest-status">ON-PROGRESS</div>
-          <div class="quest-title">SALES BOT</div>
-          <p class="quest-desc">AI based chat ai bot assistance to help customer choose suitable products</p>
+          <div class="quest-status">COMPLETED</div>
+          <div class="quest-title">SALES CHAT</div>
+          <p class="quest-desc">Amazon clone website collaboration AI ollama support customer center.</p>
           <div class="quest-tags">
             <span class="quest-tag">ANGULAR</span>
             <span class="quest-tag">FASTAPI</span>
             <span class="quest-tag">OLLAMA</span>
+            <span class="quest-tag">PYTHON</span>
           </div>
           <div class="quest-xp-reward">+1,600 XP EARNED</div>
           <div class="quest-links">
-            <a href="https://company-chat.biz" class="quest-link">⬡ LIVE DEMO</a>
+            <a href="#" class="quest-link">⬡ LIVE DEMO</a>
             <a href="#" class="quest-link">◈ SOURCE</a>
           </div>
         </div>
@@ -900,13 +1078,13 @@
     <div class="section-header fade-in">
       <div class="section-num">03</div>
       <div class="section-title">Achievements</div>
-      <div class="section-line">Complete and Continues Projects</div>
+      <div class="section-line"></div>
     </div>
 
     <div class="achievements-grid">
       <div class="badge unlocked fade-in">
         <span class="badge-icon">🏆</span>
-        <div class="badge-name">OPEN SOURCE HERO</div>
+        <div class="badge-name">OPEN SOURCE</div>
         <div class="badge-desc">500+ GitHub stars across projects</div>
       </div>
       <div class="badge unlocked fade-in">
@@ -915,16 +1093,30 @@
         <div class="badge-desc">Shipped MVP in under 48 hours</div>
       </div>
       <div class="badge unlocked fade-in">
+        <span class="badge-icon">🌍</span>
+        <div class="badge-name">APP BUILDER</div>
+        <div class="badge-desc">App used in 3+ countries</div>
+      </div>
+      <div class="badge unlocked fade-in">
         <span class="badge-icon">🔥</span>
         <div class="badge-name">365 STREAK</div>
         <div class="badge-desc">Committed code every day for a year</div>
+      </div>
+      <div class="badge unlocked fade-in">
+        <span class="badge-icon">🎓</span>
+        <div class="badge-name">KNOWLEDGE SEEKER</div>
+        <div class="badge-desc">Completed 2 certifications</div>
       </div>
       <div class="badge unlocked fade-in">
         <span class="badge-icon">🤝</span>
         <div class="badge-name">TEAM PLAYER</div>
         <div class="badge-desc">Led cross-functional team of 8</div>
       </div>
-      
+      <div class="badge locked fade-in">
+        <span class="badge-icon">🚀</span>
+        <div class="badge-name">UNICORN</div>
+        <div class="badge-desc">Build special product</div>
+      </div>
       <div class="badge locked fade-in">
         <span class="badge-icon">🧠</span>
         <div class="badge-name">AI WHISPERER</div>
@@ -947,8 +1139,9 @@
         <a href="mailto:ikhzan.developer@gmail.com" class="contact-link">✉ EMAIL</a>
         <a href="https://github.com/ikhzan" target="_blank" class="contact-link">◈ GITHUB</a>
         <a href="https://www.linkedin.com/in/mohammad-ikhsan-59656819a/" target="_blank" class="contact-link">⬡ LINKEDIN</a>
+        <a href="#" class="contact-link">⬇ DOWNLOAD CV</a>
       </div>
-      <div class="footer-note">DEV.FOX © 2026 · BUILT WITH ♥ AND TOO MUCH CAFFEINE</div>
+      <div class="footer-note">HERO.DEV © 2026 · BUILT WITH ♥ AND TOO MUCH CAFFEINE</div>
     </div>
   </section>
 
@@ -960,7 +1153,24 @@
   <div class="toast-text">LEVEL UP!<br>YOU REACHED LVL 43</div>
 </div>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
+  // ── HAMBURGER ──
+  const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('mobile-drawer');
+  hamburger.addEventListener('click', () => {
+    const open = drawer.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      drawer.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
   // ── LOADER ──
   let pct = 0;
   const pctEl = document.getElementById('loader-pct');
